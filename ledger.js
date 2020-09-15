@@ -25,9 +25,16 @@ export function handle(state, action) {
 
         let fields = action.input.fields
         let filteredData = []
-        for (let d of data) {
-            let subset = fields.reduce(function(o, k) { o[k] = d[k]; return o; }, {});
-            filteredData.push(subset)
+        if (fields.includes('*')) {
+            filteredData = data;
+        } else {
+            for (let d of data) {
+                let subset = fields.reduce(function (o, k) {
+                    o[k] = d[k];
+                    return o;
+                }, {});
+                filteredData.push(subset)
+            }
         }
 
         return {"result": filteredData}
