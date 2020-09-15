@@ -1,6 +1,14 @@
 # ArLedger
 Note: This is just a proof of concept
+## About this project
+Ledgers are typically used to record a history of economic and financial activity in an organization. 
+Many organizations build applications with ledger-like functionality because they want to maintain an accurate history 
+of their applications' data. For example, they might want to track the history of credits and debits in banking 
+transactions, verify the data lineage of an insurance claim, or trace the movement of an item in a supply chain network. 
+Ledger applications are often implemented using custom audit tables or audit trails created in relational databases.
 
+With ArLedger, the history of changes to your data is immutable—it cannot be altered, updated, or deleted. 
+And using cryptography, you can easily verify that there have been no unintended changes to your application's data. 
 ## Usage
 Note: Use this data as the object for an interaction with the SmartWeave-Contract
 ### Create a table
