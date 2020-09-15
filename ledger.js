@@ -1,6 +1,7 @@
 export function handle(state, action) {
 
     let tables = state.tables;
+    let ledgerName = state.ledgerName;
 
     if (action.input.function === 'CREATE TABLE') {
 

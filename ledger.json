@@ -1,4 +1,5 @@
 {
+  "ledgerName": "My first ArLedger",
   "tables": {
     "foo": [
       {
