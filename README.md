@@ -12,19 +12,19 @@ With ArLedger, the history of changes to your data is immutable and stored decen
 ## Usage
 Note: Use this data as the object for an interaction with the SmartWeave-Contract
 ### Create a table
-`{"function": "CREATE TABLE", "name": "foo"}`
+`{"function": "CREATE TABLE", "name": "Users"}`
 ### Insert data into a table
-`{"function": "INSERT INTO", "name": "foo", "data": {"foo": "foo", "bar": "bar"}}`
+`{"function": "INSERT INTO", "name": "Users", "data": {"firstName": "Fabian", "lastName": "Riewe"}}`
 ### Select data from a table
-`{"function": "SELECT", "from": "foo", "fields": ["foo"]}`
+`{"function": "SELECT", "from": "Users", "fields": ["firstName"]}`
 ## Examples
 I have placed some helpful scripts in `scripts`.
 
 ## Next steps
 *   Build a wrapper which is able to compile a query-language into transaction-objects. Example:
     ```
-    SELECT a, b
-    FROM bar
+    SELECT firstName, lastName
+    FROM Users
     ```
     will turn into:
     `{"function": "SELECT", "fields": ["a", "b"], "from": "bar"}`
