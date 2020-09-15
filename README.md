@@ -9,6 +9,10 @@ transactions, or trace the movement of an item in a supply chain network.
 Ledger applications are often implemented using custom audit tables or audit trails created in relational databases.
 
 With ArLedger, the history of changes to your data is immutable and stored decentralised on the Arweave-Network. 
+
+The difference between this approach and just querying tagged transaction is,
+that this approach has an underlying smart-contract which allows individual deplyoment and
+access control.
 ## Usage
 Note: Use this data as the object for an interaction with the SmartWeave-Contract
 ### Create a table
