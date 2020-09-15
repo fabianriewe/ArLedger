@@ -27,7 +27,7 @@ I have placed some helpful scripts in `scripts`.
     FROM Users
     ```
     will turn into:
-    `{"function": "SELECT", "fields": ["a", "b"], "from": "bar"}`
+    `{"function": "SELECT", "fields": ["firstName", "lastName"], "from": "Users"}`
 *   Build a VueJS sandbox and deploy it to Arweave
 *   Add more options to `SELECT`-Operation
 *   Provide some real examples
