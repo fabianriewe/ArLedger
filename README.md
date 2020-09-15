@@ -1,11 +1,22 @@
 # ArLedger
 Note: This is just a proof of concept
 
-# Usage
+## Usage
 Note: Use this data as the object for an interaction with the SmartWeave-Contract
-## Create a table
+### Create a table
 `{"function": "CREATE TABLE", "name": "foo"}`
-## Insert data into a table
+### Insert data into a table
 `{"function": "INSERT INTO", "name": "foo", "data": {"foo": "foo", "bar": "bar"}}`
-## Select data from a table
+### Select data from a table
 `{"function": "SELECT", "from": "foo", "fields": ["foo"]}`
+## Examples
+I have placed some helpful scripts in `scripts`.
+
+## Next steps
+* Build a wrapper which is able to compile a query-language into transaction-objects. Example:
+```
+SELECT a, b
+FROM bar
+```
+will turn into:
+`{"function": "SELECT", "from": "bar", "fields": ["a", "b"]}`
