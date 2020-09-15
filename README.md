@@ -25,3 +25,4 @@ I have placed some helpful scripts in `scripts`.
 *   Provide some real examples
 *   JS/Python SDK
 *   Think about a FIFO-Queue to keep transactions in place
+*   Validate input data
