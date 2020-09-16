@@ -21,7 +21,12 @@ Note: Use this data as the object for an interaction with the SmartWeave-Contrac
 ### Insert data into a table
 `{"function": "INSERT INTO", "name": "Users", "data": {"firstName": "Fabian", "lastName": "Riewe"}}`
 ### Select data from a table
+#### Select all fields
+`{"function": "SELECT", "from": "Users", "fields": ["*"]}`
+#### Select specific fields
 `{"function": "SELECT", "from": "Users", "fields": ["firstName"]}`
+#### Select with `where`
+`{"function": "SELECT", "from": "Users", "fields": ["firstName"], "where": ["lastName", "eq", "Riewe"]}`
 ## Examples
 I have placed some helpful scripts in `scripts`.
 
