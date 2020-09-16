@@ -11,8 +11,9 @@ Ledger applications are often implemented using custom audit tables or audit tra
 With ArLedger, the history of changes to your data is immutable and stored decentralised on the Arweave-Network. 
 
 The difference between this approach and just querying tagged transaction is,
-that this approach has an underlying smart-contract which allows individual deployment and
-access control.
+that this approach has an underlying smart-contract which allows querying and accessing the data directly. 
+When using a filter on transactions you can not do any filtering or selecting on the data itself.
+Another feature is that this allows individual deployment and access control.
 ## Usage
 Note: Use this data as the object for an interaction with the SmartWeave-Contract
 ### Create a table
