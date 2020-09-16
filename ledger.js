@@ -24,20 +24,46 @@ export function handle(state, action) {
         let data = tables[action.input.from]
 
         let fields = action.input.fields
+        let where = action.input.where
+
+        let operations = {
+            'eq': (a, b) => {
+                return a === b;
+            }
+        }
+
+        //filter fields
         let filteredData = []
-        if (fields.includes('*')) {
-            filteredData = data;
-        } else {
+
+        if (where) {
             for (let d of data) {
+                let expr1 = d[where[0]]
+                let expr2 = where[2]
+                let operation = where[1]
+
+                if (operations[operation](expr1, expr2)) {
+                    filteredData.push(d)
+                }
+            }
+        } else {
+            filteredData = data
+        }
+
+
+        let fieldData = []
+        if (!fields.includes('*')) {
+            for (let d of filteredData) {
                 let subset = fields.reduce(function (o, k) {
                     o[k] = d[k];
                     return o;
                 }, {});
-                filteredData.push(subset)
+                fieldData.push(subset)
             }
+        } else {
+            fieldData = filteredData
         }
 
-        return {"result": filteredData}
+        return {"result": fieldData}
     }
 
     throw new ContractError(`Invalid input`);
