@@ -1,5 +1,5 @@
 # ArLedger
-Note: This is just a proof of concept
+Latest contract Source: fhD_E9u3BS9VQiLQnBfutL73C0agDRO8zZSEew3Uy38`
 ## About this project
 A ledger contains transactions in chronological order. Data can not be modified or deleted.
  Ledgers are typically used to record a history of economic and financial activity in an organization. 
@@ -15,17 +15,35 @@ that this approach has an underlying smart-contract which allows querying and ac
 When using a filter on transactions you can not do any filtering or selecting on the data itself.
 Another feature is that this allows individual deployment and access control.
 ## Usage
+### Ledger Setup
+1.  Install the SmartWeave CLI
+    ```
+    npm install -g smartweave
+    ```
+1.  Create an initial state file. Save is as `state.json`
+    ```json
+    {
+      "ledgerName": "[YOUR LEDGER NAME]",
+      "tables": {}
+    }
+    ```
+2.  Create a new ledger with the following command
+    ```
+    smartweave fhD_E9u3BS9VQiLQnBfutL73C0agDRO8zZSEew3Uy38 state.json --key-file [YOUR KEYFILE]
+    ```
+
+### Interacting with the ledger
 Note: Use this data as the object for an interaction with the SmartWeave-Contract
-### Create a table
+#### Create a table
 `{"function": "CREATE TABLE", "name": "Users"}`
-### Insert data into a table
+#### Insert data into a table
 `{"function": "INSERT INTO", "name": "Users", "data": {"firstName": "Fabian", "lastName": "Riewe"}}`
-### Select data from a table
-#### Select all fields
+#### Select data from a table
+##### Select all fields
 `{"function": "SELECT", "from": "Users", "fields": ["*"]}`
-#### Select specific fields
+##### Select specific fields
 `{"function": "SELECT", "from": "Users", "fields": ["firstName"]}`
-#### Select with `where`
+##### Select with `where`
 `{"function": "SELECT", "from": "Users", "fields": ["firstName"], "where": ["lastName", "eq", "Riewe"]}`
 ## Examples
 I have placed some helpful scripts in `scripts`.
