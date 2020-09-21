@@ -1,5 +1,5 @@
 # ArLedger
-Latest contract Source: fhD_E9u3BS9VQiLQnBfutL73C0agDRO8zZSEew3Uy38`
+Latest contract Source: `fhD_E9u3BS9VQiLQnBfutL73C0agDRO8zZSEew3Uy38`
 ## About this project
 A ledger contains transactions in chronological order. Data can not be modified or deleted.
  Ledgers are typically used to record a history of economic and financial activity in an organization. 
@@ -33,7 +33,16 @@ Another feature is that this allows individual deployment and access control.
     ```
 
 ### Interacting with the ledger
-Note: Use this data as the object for an interaction with the SmartWeave-Contract
+Note: Use this data as the object for an interaction with the SmartWeave-Contract`
+
+You can directly interact with the ledger like this: 
+```
+smartweave write fhD_E9u3BS9VQiLQnBfutL73C0agDRO8zZSEew3Uy38 --key-file [YOUR KEYFILE] \
+--input "[CONTRACT INPUT STRING HERE]"
+```
+
+A npm-package is under development.
+
 #### Create a table
 `{"function": "CREATE TABLE", "name": "Users"}`
 #### Insert data into a table
